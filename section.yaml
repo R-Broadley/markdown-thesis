@@ -29,4 +29,7 @@ bibliography: thesis.bib
 # citation-style: vancouver.csl  # See https://www.zotero.org/styles
 reference-section-title: References
 link-citations: true
+
+header-includes: |
+  \usepackage{pdfpages}
 ---
