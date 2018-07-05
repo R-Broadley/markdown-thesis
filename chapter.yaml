@@ -1,0 +1,35 @@
+---
+title: Thesis Draft Chapter
+author: Your Name
+date: \today
+
+lang: en-GB
+
+documentclass: book
+classoption: oneside
+geometry: inner=4.3cm, outer=3cm, headsep=1cm
+margin-left: 4.3cm
+margin-right: 3cm
+linestretch: 1.5
+
+numbersections: true
+
+secPrefix:
+  - Section
+  - Sections
+figPrefix:
+  - Figure
+  - Figures
+tblPrefix:
+  - Table
+  - Tables
+eqnPrefix:
+  - Equation
+  - Equations
+linkReferences: true
+
+bibliography: thesis.bib
+# citation-style: vancouver.csl  # See https://www.zotero.org/styles
+reference-section-title: References
+link-citations: true
+---

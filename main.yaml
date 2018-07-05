@@ -1,0 +1,91 @@
+---
+title: This Is Where Your Title Goes
+author: Your Name
+degree: Doctor of Philosophy
+institution: Your University
+department: Your Department
+logo: university-logo.png
+date: \today  # Replace \today with Month YYYY for final publication
+
+documentclass: book
+classoption: oneside
+geometry: inner=4.3cm, outer=3cm, headsep=1cm
+margin-left: 4.3cm
+margin-right: 3cm
+linestretch: 1.5
+
+toc: true
+lot: true
+lof: true
+numbersections: true
+
+secPrefix:
+  - Section
+  - Sections
+figPrefix:
+  - Figure
+  - Figures
+tblPrefix:
+  - Table
+  - Tables
+eqnPrefix:
+  - Equation
+  - Equations
+linkReferences: true
+
+bibliography: thesis.bib
+# citation-style: vancouver.csl  # See https://www.zotero.org/styles
+reference-section-title: References
+link-citations: true
+
+header-includes: |
+  \usepackage{pdfpages}
+  \usepackage[toc, page]{appendix}
+
+  \makeatletter
+    \renewcommand\@pnumwidth{3em}
+  \makeatother
+  
+
+acknowledgements: |
+  Nunc bibendum tellus vel mattis eleifend.
+  Etiam metus ex, luctus et rhoncus at, auctor ut nulla.
+  Phasellus fermentum pharetra odio id hendrerit.
+  Donec sit amet orci leo. Aenean aliquet nibh a quam ornare ornare.
+  Suspendisse est arcu, condimentum vel erat ut, laoreet condimentum urna.
+  Suspendisse sed mi sit amet ex suscipit interdum.
+
+
+abstract: |
+  Nunc bibendum tellus vel mattis eleifend.
+  Etiam metus ex, luctus et rhoncus at, auctor ut nulla.
+  Phasellus fermentum pharetra odio id hendrerit.
+  Donec sit amet orci leo. Aenean aliquet nibh a quam ornare ornare.
+  Suspendisse est arcu, condimentum vel erat ut, laoreet condimentum urna.
+  Suspendisse sed mi sit amet ex suscipit interdum.
+
+
+  Sed leo ipsum, ultricies a auctor at, fringilla eu turpis.
+  Donec fringilla dictum diam, vel viverra lacus vulputate ut.
+  Nunc egestas feugiat egestas. Etiam eu tempus lacus, a consequat mi.
+  Suspendisse ornare, tortor eget ullamcorper vulputate, velit nibh eleifend risus, quis lobortis purus turpis a mi.
+  Sed feugiat neque vel aliquet sollicitudin. Nulla dapibus quis metus at ornare.
+  Suspendisse molestie aliquet odio, vel facilisis elit porttitor non.
+
+
+  Sed at magna consectetur, pretium justo vitae, pharetra enim.
+  Vestibulum placerat fermentum congue. Curabitur imperdiet lobortis luctus.
+  Nulla fermentum felis in hendrerit varius.
+  Phasellus sollicitudin tempor massa, posuere placerat odio pharetra et.
+  Quisque dignissim nibh purus, eu eleifend est viverra eu.
+  Vestibulum egestas mauris nisi, a condimentum metus fringilla a.
+  Duis a consectetur lacus.
+  Etiam viverra eu sem vitae sodales.
+  Nunc pellentesque scelerisque nunc a rhoncus.
+  Nam convallis, mi vel tincidunt sodales, massa orci pharetra lacus, vel consequat nisi justo a libero.
+  Nam nec metus ut massa sollicitudin maximus.
+  Donec luctus ornare congue.
+  Pellentesque eget semper est, nec aliquam quam.
+  Maecenas id odio ac neque pulvinar maximus et sed ipsum.
+  Morbi pulvinar erat bibendum volutpat finibus.
+---
