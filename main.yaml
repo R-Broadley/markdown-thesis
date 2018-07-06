@@ -34,8 +34,14 @@ eqnPrefix:
 linkReferences: true
 
 bibliography: thesis.bib
-# citation-style: vancouver.csl  # See https://www.zotero.org/styles
+# citation-style: nature.csl  # See https://www.zotero.org/styles
 reference-section-title: References
+natbib-options: |
+  ```{=latex}
+  super,sort&compress
+  ```
+biblio-style: plainnat
+biblio-title: References
 link-citations: true
 
 header-includes: |
