@@ -38,9 +38,9 @@ bibliography: thesis.bib
 reference-section-title: References
 natbib-options: |
   ```{=latex}
-  super,sort&compress
+  sort&compress,comma,numbers
   ```
-biblio-style: plainnat
+biblio-style: unsrtnat
 biblio-title: References
 link-citations: true
 
@@ -51,7 +51,7 @@ header-includes: |
   \makeatletter
     \renewcommand\@pnumwidth{3em}
   \makeatother
-  
+
 
 acknowledgements: |
   Nunc bibendum tellus vel mattis eleifend.

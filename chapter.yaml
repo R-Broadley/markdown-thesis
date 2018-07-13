@@ -12,6 +12,7 @@ margin-left: 4.3cm
 margin-right: 3cm
 linestretch: 1.5
 
+toc: true
 numbersections: true
 
 secPrefix:
@@ -33,9 +34,9 @@ bibliography: thesis.bib
 reference-section-title: References
 natbib-options: |
   ```{=latex}
-  super,sort&compress
+  sort&compress,comma,numbers
   ```
-biblio-style: plainnat
+biblio-style: unsrtnat
 biblio-title: References
 link-citations: true
 

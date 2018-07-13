@@ -109,6 +109,16 @@ $endif$
 $if(natbib)$
 \usepackage$if(natbib-options)$[$natbib-options$]$endif${natbib}
 \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+% Prevent citation (i.e. [10] orphaned on new line follwoing in text author.
+\makeatletter
+% \def\NAT@spacechar{\ }% OLD
+\def\NAT@spacechar{~}% NEW
+\makeatother
+% Make separator in multiple citations be "," rather than ", "
+% TODO Make this an option in YAML header
+\makeatletter
+\def\NAT@def@citea{\def\@citea{\NAT@separator}}
+\makeatother
 $endif$
 $if(biblatex)$
 \usepackage[$if(biblio-style)$style=$biblio-style$,$endif$$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$]{biblatex}

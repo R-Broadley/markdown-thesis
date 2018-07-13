@@ -38,6 +38,8 @@ appendices/%.tex.md:
 $(SUBDIR)/thesis.pdf: thesis.tex $(DEPS)
 	sed -i 's/citep{/cite{/g' $<
 	sed -i 's/citeyearpar{/cite{/g' $<
+	# Prevent citation (i.e. [10] orphaned on new line
+	sed -i 's/ \\cite{/~\\cite{/g' $<
 	-pdflatex -interaction=batchmode -output-directory=$(SUBDIR) $<
 	-bibtex $(basename $@)
 	-pdflatex -interaction=batchmode -output-directory=$(SUBDIR) $<
@@ -62,6 +64,8 @@ $(DRAFTDIR)/thesis.html: $(SECTIONS) $(MAINDEPS) $(DRAFTDIR)
 $(DRAFTDIR)/%.pdf: %.tex $(DEPS)
 	sed -i 's/citep{/cite{/g' $<
 	sed -i 's/citeyearpar{/cite{/g' $<
+	# Prevent citation (i.e. [10] orphaned on new line
+	sed -i 's/ \\cite{/~\\cite{/g' $<
 	mkdir -p $(DRAFTDIR)/$(dir $<)
 	-pdflatex -interaction=batchmode -output-directory=$(DRAFTDIR)/$(dir $<) $<
 	-bibtex $(basename $@)
@@ -69,20 +73,20 @@ $(DRAFTDIR)/%.pdf: %.tex $(DEPS)
 	-pdflatex -interaction=batchmode -output-directory=$(DRAFTDIR)/$(dir $<) $<
 	rm -f $< $(foreach ext, aux bbl blg lof log lot out toc, $(DRAFTDIR)/$(basename $<).$(ext))
 
-%.tex: % $(DRAFTCHAPDEPS) $(LATEXTEMPLATE)
+%.tex: % %/*.md $(DRAFTCHAPDEPS) $(LATEXTEMPLATE)
 	$(tex_build) -o $@ $(CHAPYAML) $</*.md
 
 %.tex: %.md $(DRAFTSECDEPS) $(LATEXTEMPLATE)
 	$(tex_build) -o $@ $(SECYAML) $<
 	
-$(DRAFTDIR)/%.docx: % $(DRAFTCHAPDEPS) $(DOCXTEMPLATE)
+$(DRAFTDIR)/%.docx: % %/*.md $(DRAFTCHAPDEPS) $(DOCXTEMPLATE)
 	$(docx_build) -o $@ $(CHAPYAML) $</*.md
 
 $(DRAFTDIR)/%.docx: %.md $(DRAFTSECDEPS) $(DOCXTEMPLATE)
 	mkdir -p $(DRAFTDIR)/$(dir $<)
 	$(docx_build) -o $@ $(SECYAML) $<
 
-$(DRAFTDIR)/%.html: % $(DRAFTCHAPDEPS)
+$(DRAFTDIR)/%.html: % %/*.md $(DRAFTCHAPDEPS)
 	$(html_build) -o $@ $(CHAPYAML) $</*.md
 
 $(DRAFTDIR)/%.html: %.md $(DRAFTSECDEPS)
